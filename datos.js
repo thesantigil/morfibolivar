@@ -185,7 +185,7 @@ const locales = [
   {
     nombre: "Café Miró",
     categoria: "cafe",
-    direccion: "Av. Belgrano 100",
+    direccion: "Av. San Martin 660",
     telefono: "--",
     lat: -36.23100409122974,
     lng: -61.11286120498524, 

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Que está abierto?</title>
+
+  <!-- Estilos de Leaflet (la librería que dibuja el mapa) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Nuestro propio archivo de estilos -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <header class="encabezado">
+    <h1>Locales abiertos</h1>
+    <p>San Carlos de Bolívar</p>
+  </header>
+
+  <!-- BARRA DE BÚSQUEDA Y FILTROS -->
+  <div class="barra-filtros">
+    <input
+      type="text"
+      id="buscador"
+      placeholder="Buscar por nombre..."
+    >
+
+    <select id="filtro-categoria">
+      <option value="todas">Todas las categorías</option>
+      <option value="parrilla">Parrilla</option>
+      <option value="pizzeria">Pizzería</option>
+      <option value="cafe">Café / Bar</option>
+      <option value="heladeria">Heladería</option>
+    </select>
+
+    <label class="filtro-checkbox">
+      <input type="checkbox" id="filtro-abiertos">
+      Mostrar solo abiertos
+    </label>
+  </div>
+
+  <!-- CONTENEDOR PRINCIPAL: mapa a la izquierda, lista a la derecha -->
+  <main class="contenedor-principal">
+
+    <!-- EL MAPA -->
+    <div id="mapa"></div>
+
+    <!-- LA LISTA DE LOCALES (las tarjetas se generan con JavaScript) -->
+    <div id="lista-locales" class="lista-locales">
+      <!-- Acá JavaScript va a insertar una tarjeta por cada local -->
+    </div>
+
+  </main>
+
+  <!-- Librería de Leaflet (el motor del mapa) -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Nuestro propio código -->
+  <script src="datos.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>

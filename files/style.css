@@ -1,0 +1,143 @@
+/* ===== RESET BÁSICO ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+}
+
+/* ===== ENCABEZADO ===== */
+.encabezado {
+  background-color: #3d0026;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.encabezado h1 {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+/* ===== BARRA DE FILTROS ===== */
+.barra-filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.barra-filtros input[type="text"],
+.barra-filtros select {
+  padding: 8px 12px;
+  font-family:'Times New Roman', Times, serif;
+  border: 2px solid #7a0f3d;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.filtro-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* ===== CONTENEDOR PRINCIPAL (mapa + lista) ===== */
+.contenedor-principal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* El mapa ocupa un tamaño fijo y se ve siempre */
+#mapa {
+  flex: 1 1 500px;
+  height: 500px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* La lista de locales, al lado del mapa */
+.lista-locales {
+  flex: 1 1 350px;
+  max-height: 500px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ===== TARJETA DE CADA LOCAL ===== */
+.tarjeta-local {
+  background-color: white;
+  border-radius: 10px;
+  padding: 14px 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-left: 5px solid #ccc;
+}
+
+.tarjeta-local.abierto {
+  border-left-color: #27ae60;
+}
+
+.tarjeta-local.cerrado {
+  border-left-color: #c0392b;
+}
+
+.tarjeta-local h3 {
+  font-size: 17px;
+  margin-bottom: 4px;
+}
+
+.tarjeta-local p {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 2px;
+}
+
+.estado {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+}
+
+.estado.abierto {
+  background-color: #27ae60;
+}
+
+.estado.cerrado {
+  background-color: #c0392b;
+}
+
+/* ===== RESPONSIVE: en pantallas chicas, mapa arriba y lista abajo ===== */
+@media (max-width: 800px) {
+  .contenedor-principal {
+    flex-direction: column;
+  }
+
+  #mapa {
+    height: 350px;
+  }
+
+  .lista-locales {
+    max-height: none;
+  }
+}

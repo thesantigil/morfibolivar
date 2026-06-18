@@ -8,7 +8,7 @@
 
 // ===== 1. CREAR EL MAPA =====
 // Coordenadas aproximadas del centro de San Carlos de Bolívar
-const mapa = L.map('mapa').setView([-36.1538, -61.1156], 14);
+const mapa = L.map('mapa').setView([-36.2314, -61.1158], 15);
 
 // Las "tiles" son las imágenes que forman el mapa visualmente
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

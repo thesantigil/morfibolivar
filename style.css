@@ -1,4 +1,22 @@
-/* ===== RESET BÁSICO ===== */
+/* =========================================================
+   MORFI BOLÍVAR — sistema de diseño
+   Paleta: crema tostado + café oscuro + terracota quemado
+   ========================================================= */
+
+:root {
+  --crema:           #F2E8D8; /* fondo general, cálido como un mantel */
+  --crema-tarjeta:    #FBF6EC; /* fondo de las tarjetas, un poco más claro */
+  --cafe-oscuro:      #2E2018; /* texto principal, casi negro con base marrón */
+  --cafe-medio:       #6B5645; /* texto secundario */
+  --terracota:        #B5482F; /* acento principal: brasas, ladrillo quemado */
+  --terracota-oscuro: #8C3520; /* hover / detalles */
+  --oliva:            #5C6B3F; /* "abierto" — verde apagado, no semáforo */
+  --oliva-oscuro:     #3F4A2B;
+  --rojo-cerrado:     #8C3A30; /* "cerrado" — rojo tierra, no rojo alarma */
+  --linea:            #DCC9A8; /* bordes y separadores sutiles */
+  --sombra:           rgba(46, 32, 24, 0.12);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,22 +24,42 @@
 }
 
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background-color: #ffffff;
-  color: #333;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background-color: var(--crema);
+  color: var(--cafe-oscuro);
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(46,32,24,0.05) 1px, transparent 0);
+  background-size: 22px 22px;
 }
 
 /* ===== ENCABEZADO ===== */
 .encabezado {
-  background-color: #3d0026;
-  color: white;
-  padding: 20px;
+  background-color: var(--cafe-oscuro);
+  color: var(--crema);
+  padding: 38px 20px 32px;
   text-align: center;
+  position: relative;
+  border-bottom: 4px solid var(--terracota);
 }
 
 .encabezado h1 {
-  font-size: 28px;
-  margin-bottom: 5px;
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  font-size: 34px;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.encabezado h1 span {
+  color: var(--terracota);
+}
+
+.encabezado p {
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--linea);
+  opacity: 0.85;
 }
 
 /* ===== BARRA DE FILTROS ===== */
@@ -31,25 +69,46 @@ body {
   gap: 12px;
   align-items: center;
   justify-content: center;
-  background-color: rgb(255, 255, 255);
-  padding: 15px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background-color: var(--crema-tarjeta);
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--linea);
 }
 
 .barra-filtros input[type="text"],
 .barra-filtros select {
-  padding: 8px 12px;
-  font-family:'Times New Roman', Times, serif;
-  border: 2px solid #7a0f3d;
-  border-radius: 6px;
-  font-size: 12px;
+  padding: 9px 14px;
+  border: 1.5px solid var(--linea);
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  background-color: var(--crema);
+  color: var(--cafe-oscuro);
+  transition: border-color 0.2s ease;
+}
+
+.barra-filtros input[type="text"]:focus,
+.barra-filtros select:focus {
+  outline: none;
+  border-color: var(--terracota);
+}
+
+.barra-filtros input[type="text"] {
+  min-width: 220px;
 }
 
 .filtro-checkbox {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
   font-size: 14px;
+  color: var(--cafe-medio);
+  cursor: pointer;
+}
+
+.filtro-checkbox input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--terracota);
   cursor: pointer;
 }
 
@@ -57,8 +116,8 @@ body {
 .contenedor-principal {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
-  padding: 16px;
+  gap: 18px;
+  padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -67,8 +126,9 @@ body {
 #mapa {
   flex: 1 1 500px;
   height: 500px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  border-radius: 12px;
+  box-shadow: 0 4px 14px var(--sombra);
+  border: 3px solid var(--crema-tarjeta);
 }
 
 /* La lista de locales, al lado del mapa */
@@ -79,52 +139,77 @@ body {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  padding-right: 4px;
+}
+
+.lista-locales::-webkit-scrollbar {
+  width: 8px;
+}
+
+.lista-locales::-webkit-scrollbar-thumb {
+  background-color: var(--linea);
+  border-radius: 8px;
 }
 
 /* ===== TARJETA DE CADA LOCAL ===== */
 .tarjeta-local {
-  background-color: white;
+  background-color: var(--crema-tarjeta);
   border-radius: 10px;
-  padding: 14px 16px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  border-left: 5px solid #ccc;
+  padding: 16px 18px;
+  box-shadow: 0 2px 8px var(--sombra);
+  border-left: 4px solid var(--linea);
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.tarjeta-local:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px var(--sombra);
 }
 
 .tarjeta-local.abierto {
-  border-left-color: #27ae60;
+  border-left-color: var(--oliva);
 }
 
 .tarjeta-local.cerrado {
-  border-left-color: #c0392b;
+  border-left-color: var(--rojo-cerrado);
 }
 
 .tarjeta-local h3 {
-  font-size: 17px;
-  margin-bottom: 4px;
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 6px;
+  color: var(--cafe-oscuro);
 }
 
 .tarjeta-local p {
   font-size: 13px;
-  color: #666;
-  margin-bottom: 2px;
+  color: var(--cafe-medio);
+  margin-bottom: 3px;
 }
 
+/* El "sello" de abierto/cerrado, como estampado a mano */
 .estado {
   display: inline-block;
-  margin-top: 6px;
-  padding: 3px 10px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: bold;
-  color: white;
+  margin-top: 8px;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--crema);
+  transform: rotate(-2deg);
 }
 
 .estado.abierto {
-  background-color: #27ae60;
+  background-color: var(--oliva);
 }
 
 .estado.cerrado {
-  background-color: #c0392b;
+  background-color: var(--rojo-cerrado);
 }
 
 /* ===== RESPONSIVE: en pantallas chicas, mapa arriba y lista abajo ===== */
@@ -133,8 +218,12 @@ body {
     flex-direction: column;
   }
 
+  .encabezado h1 {
+    font-size: 27px;
+  }
+
   #mapa {
-    height: 350px;
+    height: 320px;
   }
 
   .lista-locales {

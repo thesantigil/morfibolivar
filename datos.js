@@ -150,6 +150,23 @@ const locales = [
     }
   },
     {
+    nombre: "Rotiseria Sil",
+    categoria: "pizzeria",
+    direccion: "Almafuerte 138",
+    telefono: "2314-425171",
+    lat: -36.224124508696754,
+    lng: -61.110797502127234,
+    horarios: {
+      lunes:     { cerrado: true },
+      martes:    { cerrado: true },
+      miercoles: { apertura: "9:30",  cierre: "13:30", apertura: "18:00",  cierre: "21:00" },
+      jueves:    { apertura: "9:30",  cierre: "13:30", apertura: "18:00",  cierre: "21:00" },
+      viernes:   { apertura: "9:30",  cierre: "13:30", apertura: "18:00",  cierre: "21:00" },
+      sabado:    { apertura: "9:30",  cierre: "13:30", apertura: "18:00",  cierre: "21:00" },
+      domingo:   {apertura: "9:30",  cierre: "14:30", }
+    }
+  },
+    {
     nombre: "Los Girasoles",
     categoria: "pizzeria",
     direccion: "Av Lavalle 399",

@@ -16,18 +16,18 @@ const locales = [
   {
     nombre: "Don Emilio",
     categoria: "parrilla",
-    direccion: "Av Brown y Rivas",
+    direccion: "Av Brown y Ignacio Rivas",
     telefono: "2314-426283",
     lat: -36.2280156249528,
     lng: -61.11319735971254,
     horarios: {
-      lunes:     { cerrado: true },
-      martes:    { apertura: 12, cierre: 15 },
-      miercoles: { apertura: 12, cierre: 15 },
-      jueves:    { apertura: 12, cierre: 15 },
-      viernes:   { apertura: 12, cierre: 16, apertura2: 20, cierre2: 24 },
-      sabado:    { apertura: 12, cierre: 16, apertura2: 20, cierre2: 25 },
-      domingo:   { apertura: 12, cierre: 16 }
+      lunes:     { apertura: "11:00", cierre: "24:00" },
+      martes:    { apertura: "11:00", cierre: "24:00" },
+      miercoles: { cerrado: true },
+      jueves:    { apertura: "11:00", cierre: "24:00" },
+      viernes:   { apertura: "11:00", cierre: "16:00", apertura2: "20:00", cierre2: "24:00" },
+      sabado:    { apertura: "11:00", cierre: "16:00", apertura2: "20:00", cierre2: "24:00" },
+      domingo:   { apertura: "11:00", cierre: "16:00" }
     }
   },
     {
@@ -39,14 +39,15 @@ const locales = [
     lng: -61.14072948682466,
     horarios: {
       lunes:     { cerrado: true },
-      martes:    { apertura: 12, cierre: 15 },
-      miercoles: { apertura: 12, cierre: 15 },
-      jueves:    { apertura: 12, cierre: 15 },
-      viernes:   { apertura: 12, cierre: 16, apertura2: 20, cierre2: 24 },
-      sabado:    { apertura: 12, cierre: 16, apertura2: 20, cierre2: 25 },
-      domingo:   { apertura: 12, cierre: 16 }
+      martes:    { apertura: "12:00", cierre: "15:00" },
+      miercoles: { apertura: "12:00", cierre: "15:00" },
+      jueves:    { apertura: "12:00", cierre: "15:00" },
+      viernes:   { apertura: "12:00", cierre: "16:00", apertura2: "20:00", cierre2: "23:00" },
+      sabado:    { apertura: "12:00", cierre: "16:00", apertura2: "20:00", cierre2: "23:00" },
+      domingo:   { apertura: "12:00", cierre: "16:00" }
     }
   },
+
   {
     nombre: "La tablita",
     categoria: "parrilla",
@@ -55,66 +56,49 @@ const locales = [
     lat: -36.24489797811856,
     lng: -61.11059982199166,
     horarios: {
-      lunes:     { cerrado: true },
-      martes:    { apertura: 12, cierre: 15 },
-      miercoles: { apertura: 12, cierre: 15 },
-      jueves:    { apertura: 12, cierre: 15 },
-      viernes:   { apertura: 12, cierre: 16, apertura2: 20, cierre2: 24 },
-      sabado:    { apertura: 12, cierre: 16, apertura2: 20, cierre2: 25 },
-      domingo:   { apertura: 12, cierre: 16 }
+      lunes:     { apertura: "10:00", cierre: "15:00" },
+      martes:    { apertura: "10:00", cierre: "15:00" },
+      miercoles: { apertura: "10:00", cierre: "15:00" },
+      jueves:    { apertura: "10:00", cierre: "15:00" },
+      viernes:   { apertura: "10:00", cierre: "15:00" },
+      sabado:    { apertura: "10:00", cierre: "15:00" },
+      domingo:   { apertura: "10:00", cierre: "15:00" }
     }
   },
   {
-    nombre: "Parrilla Ruta 65",
+    nombre: "Ruta 65",
     categoria: "Av Brown 120",
     telefono: "2314-424747",
     lat: -36.22856439041418,
     lng: -61.112973590121975,
     horarios: {
-      lunes:     { cerrado: true },
-      martes:    { apertura: 12, cierre: 15 },
-      miercoles: { apertura: 12, cierre: 15 },
-      jueves:    { apertura: 12, cierre: 15 },
-      viernes:   { apertura: 12, cierre: 16, apertura2: 20, cierre2: 24 },
-      sabado:    { apertura: 12, cierre: 16, apertura2: 20, cierre2: 25 },
-      domingo:   { apertura: 12, cierre: 16 }
+      lunes:     { apertura: "08:00", cierre: "12:00" },
+      martes:    { apertura: "11:00", cierre: "15:00", apertura2: "20:00", cierre2: "24:00" },
+      miercoles: { apertura: "11:00", cierre: "15:00", apertura2: "20:00", cierre2: "24:00" },
+      jueves:    { apertura: "11:00", cierre: "15:00", apertura2: "20:00", cierre2: "24:00" },
+      viernes:   { apertura: "11:00", cierre: "15:00", apertura2: "20:00", cierre2: "24:00" },
+      sabado:    { apertura: "11:00", cierre: "15:00", apertura2: "20:00", cierre2: "24:00" },
+      domingo:   { apertura: "11:00", cierre: "15:00", apertura2: "20:00", cierre2: "24:00" }
     }
   },
   {
     nombre: "Pizza Roots",
     categoria: "pizzeria",
-    direccion: "Belgrano 220",
+    direccion: "Belgrano y Sarmiento",
     telefono: "2314-628680",
     lat: -36.228364861725744,
     lng: -61.11092627971464,
     horarios: {
-      lunes:     { cerrado: true },
-      martes:    { apertura: 20, cierre: 24 },
-      miercoles: { apertura: 20, cierre: 24 },
-      jueves:    { apertura: 20, cierre: 24 },
-      viernes:   { apertura: 20, cierre: 25 },
-      sabado:    { apertura: 20, cierre: 25 },
-      domingo:   { apertura: 20, cierre: 24 }
+      lunes:     { apertura: "20:00", cierre: "24:00" },
+      martes:    { apertura: "20:00", cierre: "24:00" },
+      miercoles: { apertura: "20:00", cierre: "24:00" },
+      jueves:    { apertura: "20:00", cierre: "24:00" },
+      viernes:   { apertura: "20:00", cierre: "24:00" },
+      sabado:    { apertura: "20:00", cierre: "24:00" },
+      domingo:   { apertura: "20:00", cierre: "24:00" }
     }
   },
   {
-    nombre: "La Vizcaina",
-    categoria: "pizzeria",
-    direccion: "Belgrano 220",
-    telefono: "2314-627744",
-    lat: -36.22823199078752,
-    lng: -61.11229613752853,
-    horarios: {
-      lunes:     { cerrado: true },
-      martes:    { apertura: 20, cierre: 24 },
-      miercoles: { apertura: 20, cierre: 24 },
-      jueves:    { apertura: 20, cierre: 24 },
-      viernes:   { apertura: 20, cierre: 25 },
-      sabado:    { apertura: 20, cierre: 25 },
-      domingo:   { apertura: 20, cierre: 24 }
-    }
-  },
-    {
     nombre: "Don Tata",
     categoria: "pizzeria",
     direccion: "Av San Martin 1455",
@@ -122,13 +106,13 @@ const locales = [
     lat: -36.22473296539379,
     lng: -61.120595825629344,
     horarios: {
-      lunes:     { cerrado: true },
-      martes:    { apertura: 20, cierre: 24 },
-      miercoles: { apertura: 20, cierre: 24 },
-      jueves:    { apertura: 20, cierre: 24 },
-      viernes:   { apertura: 20, cierre: 25 },
-      sabado:    { apertura: 20, cierre: 25 },
-      domingo:   { apertura: 20, cierre: 24 }
+      lunes:     { apertura: "11:00", cierre: "14:00", apertura2: "19:00", cierre2: "24:00"},
+      martes:    { cerrado: true },
+      miercoles: { apertura: "11:00", cierre: "14:00", apertura2: "19:00", cierre2: "24:00" },
+      jueves:    { apertura: "11:00", cierre: "14:00", apertura2: "19:00", cierre2: "24:00" },
+      viernes:   { apertura: "11:00", cierre: "14:00", apertura2: "19:00", cierre2: "24:00" },
+      sabado:    { apertura: "11:00", cierre: "14:00", apertura2: "19:00", cierre2: "24:00" },
+      domingo:   { apertura2: "19:00", cierre2: "24:00" }
     }
   },
       {
@@ -140,12 +124,12 @@ const locales = [
     lng: -61.11887577544843,
     horarios: {
       lunes:     { cerrado: true },
-      martes:    { apertura: 20, cierre: 24 },
-      miercoles: { apertura: 20, cierre: 24 },
-      jueves:    { apertura: 20, cierre: 24 },
-      viernes:   { apertura: 20, cierre: 25 },
-      sabado:    { apertura: 20, cierre: 25 },
-      domingo:   { apertura: 20, cierre: 24 }
+      martes:    { cerrado: true },
+      miercoles: { apertura: "20:00", cierre: "24:00" },
+      jueves:    { apertura: "20:00", cierre: "24:00" },
+      viernes:   { apertura: "20:00", cierre: "24:00" },
+      sabado:    { apertura: "20:00", cierre: "24:00" },
+      domingo:   { apertura: "20:00", cierre: "24:00" }
     }
   },
   {
@@ -157,12 +141,12 @@ const locales = [
     lng: -61.11568783008354,
     horarios: {
       lunes:     { cerrado: true },
-      martes:    { apertura: 20, cierre: 24 },
-      miercoles: { apertura: 20, cierre: 24 },
-      jueves:    { apertura: 20, cierre: 24 },
-      viernes:   { apertura: 20, cierre: 25 },
-      sabado:    { apertura: 20, cierre: 25 },
-      domingo:   { apertura: 20, cierre: 24 }
+      martes:    { cerrado: true },
+      miercoles: { apertura: "9:30",  cierre: "13:30", apertura: "18:00",  cierre: "21:00" },
+      jueves:    { apertura: "9:30",  cierre: "13:30", apertura: "18:00",  cierre: "21:00" },
+      viernes:   { apertura: "9:30",  cierre: "13:30", apertura: "18:00",  cierre: "21:00" },
+      sabado:    { apertura: "9:30",  cierre: "13:30", apertura: "18:00",  cierre: "21:00" },
+      domingo:   {apertura: "9:30",  cierre: "14:30", }
     }
   },
     {
@@ -174,12 +158,12 @@ const locales = [
     lng: -61.117356420104855,
     horarios: {
       lunes:     { cerrado: true },
-      martes:    { apertura: 20, cierre: 24 },
-      miercoles: { apertura: 20, cierre: 24 },
-      jueves:    { apertura: 20, cierre: 24 },
-      viernes:   { apertura: 20, cierre: 25 },
-      sabado:    { apertura: 20, cierre: 25 },
-      domingo:   { apertura: 20, cierre: 24 }
+      martes:    { apertura: "08:00", cierre: "24:00" },
+      miercoles: { apertura: "08:00", cierre: "24:00" },
+      jueves:    { apertura: "08:00", cierre: "24:00" },
+      viernes:   { apertura: "08:00", cierre: "24:00" },
+      sabado:    { apertura: "08:00", cierre: "24:00" },
+      domingo:   { apertura: "08:00", cierre: "24:00" }
     }
   },
   {
@@ -190,13 +174,13 @@ const locales = [
     lat: -36.23100409122974,
     lng: -61.11286120498524, 
     horarios: {
-      lunes:     { apertura: 8, cierre: 20 },
-      martes:    { apertura: 8, cierre: 20 },
-      miercoles: { apertura: 8, cierre: 20 },
-      jueves:    { apertura: 8, cierre: 20 },
-      viernes:   { apertura: 8, cierre: 21 },
-      sabado:    { apertura: 9, cierre: 21 },
-      domingo:   { apertura: 9, cierre: 13 }
+      lunes:     { apertura: "08:00", cierre: "20:00" },
+      martes:    { apertura: "08:00", cierre: "20:00" },
+      miercoles: { apertura: "08:00", cierre: "20:00" },
+      jueves:    { apertura: "08:00", cierre: "20:00" },
+      viernes:   { apertura: "08:00", cierre: "20:00" },
+      sabado:    { apertura: "08:00", cierre: "20:00" },
+      domingo:   { apertura: "08:00", cierre: "20:00" }
     }
   },
 
@@ -208,13 +192,13 @@ const locales = [
     lat: -36.22878879165026,
     lng: -61.11440411694179,
     horarios: {
-      lunes:     { apertura: 15, cierre: 23 },
-      martes:    { apertura: 15, cierre: 23 },
-      miercoles: { apertura: 15, cierre: 23 },
-      jueves:    { apertura: 15, cierre: 23 },
-      viernes:   { apertura: 15, cierre: 24 },
-      sabado:    { apertura: 15, cierre: 24 },
-      domingo:   { apertura: 15, cierre: 23 }
+      lunes:     { cerrado: true },
+      martes:    { apertura: "11:00", cierre: "24:00" },
+      miercoles: { apertura: "11:00", cierre: "24:00" },
+      jueves:    { apertura: "11:00", cierre: "24:00" },
+      viernes:   { apertura: "11:00", cierre: "24:00" },
+      sabado:    { apertura: "11:00", cierre: "24:00" },
+      domingo:   { apertura: "11:00", cierre: "24:00" }
     }
   },
 
@@ -226,30 +210,30 @@ const locales = [
     lat: -36.22878879165026,
     lng: -61.11440411694179,
     horarios: {
-      lunes:     { apertura: 15, cierre: 23 },
-      martes:    { apertura: 15, cierre: 23 },
-      miercoles: { apertura: 15, cierre: 23 },
-      jueves:    { apertura: 15, cierre: 23 },
-      viernes:   { apertura: 15, cierre: 24 },
-      sabado:    { apertura: 15, cierre: 24 },
-      domingo:   { apertura: 15, cierre: 23 }
+      lunes:     { apertura: "15:00", cierre: "24:30" },
+      martes:    { apertura: "15:00", cierre: "24:30" },
+      miercoles: { apertura: "15:00", cierre: "24:30" },
+      jueves:    { apertura: "15:00", cierre: "24:30" },
+      viernes:   { apertura: "15:00", cierre: "24:30" },
+      sabado:    { apertura: "15:00", cierre: "24:30" },
+      domingo:   { apertura: "15:00", cierre: "24:30" }
     }
   },
   {
-    nombre: "Heladería OASIS",
+    nombre: "Oasis",
     categoria: "heladeria",
     direccion: "Av. San Martín 234",
     telefono: "2314-578510",
     lat: -36.234040977084106,
     lng: -61.109186494646465,
     horarios: {
-      lunes:     { apertura: 15, cierre: 23 },
-      martes:    { apertura: 15, cierre: 23 },
-      miercoles: { apertura: 15, cierre: 23 },
-      jueves:    { apertura: 15, cierre: 23 },
-      viernes:   { apertura: 15, cierre: 24 },
-      sabado:    { apertura: 15, cierre: 24 },
-      domingo:   { apertura: 15, cierre: 23 }
+      lunes:     { apertura: "12:00", cierre: "24:00" },
+      martes:    { apertura: "12:00", cierre: "24:00" },
+      miercoles: { cerrado: true },
+      jueves:    { apertura: "12:00", cierre: "24:00" },
+      viernes:   { apertura: "12:00", cierre: "24:00" },
+      sabado:    { apertura: "12:00", cierre: "24:00" },
+      domingo:   { apertura: "12:00", cierre: "24:00" }
     }
   },
   {
@@ -260,13 +244,13 @@ const locales = [
     lat: -36.22799815269258,
     lng: -61.11221305046923,
     horarios: {
-      lunes:     { apertura: 15, cierre: 23 },
-      martes:    { apertura: 15, cierre: 23 },
-      miercoles: { apertura: 15, cierre: 23 },
-      jueves:    { apertura: 15, cierre: 23 },
-      viernes:   { apertura: 15, cierre: 24 },
-      sabado:    { apertura: 15, cierre: 24 },
-      domingo:   { apertura: 15, cierre: 23 }
+      lunes:     { apertura: "12:00", cierre: "24:00" },
+      martes:    { apertura: "12:00", cierre: "24:00" },
+      miercoles: { apertura: "12:00", cierre: "24:00" },
+      jueves:    { apertura: "12:00", cierre: "24:00" },
+      viernes:   { apertura: "12:00", cierre: "24:00" },
+      sabado:    { apertura: "12:00", cierre: "24:00" },
+      domingo:   { apertura: "12:00", cierre: "24:00" }
     }
   },
 ];

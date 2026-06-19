@@ -7,7 +7,8 @@
 */
 
 // ===== 1. CREAR EL MAPA =====
-// Coordenadas aproximadas del centro de San Carlos de Bolívar
+// Coordenadas del centro de San Carlos de Bolívar (ajustado al centro real
+// de la zona donde están los locales cargados)
 const mapa = L.map('mapa').setView([-36.2314, -61.1158], 15);
 
 // Las "tiles" son las imágenes que forman el mapa visualmente
@@ -16,39 +17,47 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(mapa);
 
 
-// ===== 2. FUNCIÓN PARA SABER SI UN LOCAL ESTÁ ABIERTO =====
+// ===== 2. FUNCIÓN AUXILIAR: convierte "HH:MM" a minutos totales =====
+// Permite horarios con minutos: "8:00" → 480, "20:30" → 1230
+// Para cierres pasada medianoche, se usa "25:00", "25:30", etc.
+function horaAMinutos(horaTexto) {
+  const partes = horaTexto.split(":");
+  const horas = parseInt(partes[0], 10);
+  const minutos = partes[1] ? parseInt(partes[1], 10) : 0;
+  return horas * 60 + minutos;
+}
+
+
+// ===== 3. FUNCIÓN PARA SABER SI UN LOCAL ESTÁ ABIERTO =====
 function estaAbierto(local) {
   const ahora = new Date();
   const diaSemana = ahora.getDay(); // 0 = domingo, 1 = lunes, ... 6 = sábado
-  const horaActual = ahora.getHours() + (ahora.getMinutes() / 60);
+  const minutosActuales = ahora.getHours() * 60 + ahora.getMinutes();
 
-  // Traducimos el número de día al nombre que usamos en datos.js
   const nombresDias = ["domingo", "lunes", "martes", "miercoles", "jueves", "viernes", "sabado"];
   const nombreDiaHoy = nombresDias[diaSemana];
-
   const horarioHoy = local.horarios[nombreDiaHoy];
 
-  // Si no hay horario cargado para hoy, o dice "cerrado", el local está cerrado
   if (!horarioHoy || horarioHoy.cerrado) {
     return false;
   }
 
-  // Comparamos el primer rango (mañana/tarde)
-  const dentroDelPrimerRango =
-    horaActual >= horarioHoy.apertura && horaActual < horarioHoy.cierre;
+  const apertura = horaAMinutos(horarioHoy.apertura);
+  const cierre   = horaAMinutos(horarioHoy.cierre);
+  const dentroDelPrimerRango = minutosActuales >= apertura && minutosActuales < cierre;
 
-  // Si hay un segundo rango (por ejemplo, vuelve a abrir a la noche), lo revisamos también
   let dentroDelSegundoRango = false;
   if (horarioHoy.apertura2 !== undefined) {
-    dentroDelSegundoRango =
-      horaActual >= horarioHoy.apertura2 && horaActual < horarioHoy.cierre2;
+    const apertura2 = horaAMinutos(horarioHoy.apertura2);
+    const cierre2   = horaAMinutos(horarioHoy.cierre2);
+    dentroDelSegundoRango = minutosActuales >= apertura2 && minutosActuales < cierre2;
   }
 
   return dentroDelPrimerRango || dentroDelSegundoRango;
 }
 
 
-// ===== 3. FUNCIÓN PARA DAR FORMATO AL HORARIO DE HOY (texto legible) =====
+// ===== 4. FUNCIÓN PARA DAR FORMATO AL HORARIO DE HOY (texto legible) =====
 function textoHorarioHoy(local) {
   const ahora = new Date();
   const diaSemana = ahora.getDay();
@@ -59,30 +68,31 @@ function textoHorarioHoy(local) {
     return "Hoy no abre";
   }
 
-  function formatoHora(h) {
-    const horaNormalizada = h % 24;
-    return horaNormalizada + ":00";
+  // Normaliza la hora para mostrarla (si es "25:30" muestra "1:30")
+  function normalizarHora(horaTexto) {
+    const partes = horaTexto.split(":");
+    let horas = parseInt(partes[0], 10) % 24;
+    const minutos = partes[1] ? partes[1] : "00";
+    return `${horas}:${minutos}`;
   }
 
-  let texto = `Hoy: ${formatoHora(horarioHoy.apertura)} a ${formatoHora(horarioHoy.cierre)}`;
+  let texto = `Hoy: ${normalizarHora(horarioHoy.apertura)} a ${normalizarHora(horarioHoy.cierre)}`;
 
   if (horarioHoy.apertura2 !== undefined) {
-    texto += ` y ${formatoHora(horarioHoy.apertura2)} a ${formatoHora(horarioHoy.cierre2)}`;
+    texto += ` y ${normalizarHora(horarioHoy.apertura2)} a ${normalizarHora(horarioHoy.cierre2)}`;
   }
 
   return texto;
 }
 
 
-// ===== 4. DIBUJAR LOS MARCADORES EN EL MAPA =====
-// Guardamos los marcadores en un objeto para poder encontrarlos después
+// ===== 5. DIBUJAR LOS MARCADORES EN EL MAPA =====
 const marcadores = {};
 
 function crearMarcadores() {
   locales.forEach((local) => {
     const abierto = estaAbierto(local);
 
-    // Ícono de color según esté abierto o cerrado
     const colorIcono = abierto ? 'green' : 'red';
 
     const icono = L.icon({
@@ -107,7 +117,7 @@ function crearMarcadores() {
 }
 
 
-// ===== 5. CREAR LAS TARJETAS DE LA LISTA =====
+// ===== 6. CREAR LAS TARJETAS DE LA LISTA =====
 function crearTarjeta(local) {
   const abierto = estaAbierto(local);
 
@@ -127,7 +137,6 @@ function crearTarjeta(local) {
     </span>
   `;
 
-  // Si tocás la tarjeta, el mapa se centra en ese local y abre su popup
   tarjeta.addEventListener('click', () => {
     mapa.setView([local.lat, local.lng], 16);
     marcadores[local.nombre].openPopup();
@@ -147,7 +156,7 @@ function mostrarTodasLasTarjetas() {
 }
 
 
-// ===== 6. FILTROS (buscador, categoría, solo abiertos) =====
+// ===== 7. FILTROS =====
 function aplicarFiltros() {
   const textoBuscado = document.getElementById('buscador').value.toLowerCase();
   const categoriaElegida = document.getElementById('filtro-categoria').value;
@@ -173,12 +182,10 @@ document.getElementById('filtro-categoria').addEventListener('change', aplicarFi
 document.getElementById('filtro-abiertos').addEventListener('change', aplicarFiltros);
 
 
-// ===== 7. INICIAR TODO =====
+// ===== 8. INICIAR TODO =====
 crearMarcadores();
 mostrarTodasLasTarjetas();
 
-// Actualizamos el estado abierto/cerrado cada minuto, por si el usuario
-// deja la página abierta y cambia el horario (ej: el local cierra mientras mira la página)
 setInterval(() => {
   crearMarcadores();
   mostrarTodasLasTarjetas();

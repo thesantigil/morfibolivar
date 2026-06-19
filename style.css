@@ -61,6 +61,53 @@ body {
   color: var(--linea);
   opacity: 0.85;
 }
+/* ===== ENCABEZADO CON ANIMACIÓN ===== */
+.encabezado {
+  background: linear-gradient(
+    -95deg,
+    #2E2018,
+    #B5482F,
+    #8C3520,
+    #851052
+  );
+  background-size: 400% 400%;
+  animation: gradiente-movil 8s ease infinite;
+  color: var(--crema);
+  padding: 38px 20px 32px;
+  text-align: center;
+  position: relative;
+  border-bottom: 4px solid var(--terracota);
+}
+
+/* El título aparece suavemente al cargar */
+.encabezado h1 {
+  animation: entrada-titulo 0.8s ease-out both;
+}
+
+.encabezado p {
+  animation: entrada-titulo 0.8s ease-out 0.2s both;
+}
+
+/* ===== KEYFRAMES (definición de las animaciones) ===== */
+
+/* El degradado se mueve suavemente entre los colores */
+@keyframes gradiente-movil {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* El texto entra desde abajo con un fade */
+@keyframes entrada-titulo {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* ===== BARRA DE FILTROS ===== */
 .barra-filtros {
@@ -126,9 +173,8 @@ body {
 #mapa {
   flex: 1 1 500px;
   height: 500px;
-  border-radius: 12px;
-  box-shadow: 0 4px 14px var(--sombra);
-  border: 3px solid var(--crema-tarjeta);
+  border-radius: 10px;
+  border: 5px solid rgb(0, 0, 0);
 }
 
 /* La lista de locales, al lado del mapa */

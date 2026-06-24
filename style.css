@@ -34,58 +34,33 @@ body {
 
 /* ===== ENCABEZADO ===== */
 .encabezado {
-  background-color: var(--cafe-oscuro);
-  color: var(--crema);
-  padding: 38px 20px 32px;
-  text-align: center;
   position: relative;
-  border-bottom: 4px solid var(--terracota);
-}
-
-.encabezado h1 {
-  font-family: 'Fraunces', Georgia, serif;
-  font-weight: 600;
-  font-size: 34px;
-  letter-spacing: 0.5px;
-  margin-bottom: 6px;
-}
-
-.encabezado h1 span {
-  color: var(--terracota);
-}
-
-.encabezado p {
-  font-size: 13px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--linea);
-  opacity: 0.85;
-}
-/* ===== ENCABEZADO CON ANIMACIÓN ===== */
-.encabezado {
-  background: linear-gradient(
-    -95deg,
-    #2E2018,
-    #B5482F,
-    #8C3520,
-    #851052
-  );
-  background-size: 400% 400%;
-  animation: gradiente-movil 8s ease infinite;
-  color: var(--crema);
-  padding: 38px 20px 32px;
+  overflow: hidden;
+  padding: 100px 120px;  /* subí este número para más alto, bajalo para menos */
   text-align: center;
+}
+
+.video-fondo {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Capa oscura encima del video para que el texto se lea bien */
+.encabezado::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+.encabezado-contenido {
   position: relative;
-  border-bottom: 4px solid var(--terracota);
-}
-
-/* El título aparece suavemente al cargar */
-.encabezado h1 {
-  animation: entrada-titulo 0.8s ease-out both;
-}
-
-.encabezado p {
-  animation: entrada-titulo 0.8s ease-out 0.2s both;
+  z-index: 2;
 }
 
 /* ===== KEYFRAMES (definición de las animaciones) ===== */
@@ -116,7 +91,7 @@ body {
   gap: 12px;
   align-items: center;
   justify-content: center;
-  background-color: var(--crema-tarjeta);
+  background-color: rgb(67, 4, 32);
   padding: 16px 20px;
   border-bottom: 1px solid var(--linea);
 }
@@ -124,19 +99,19 @@ body {
 .barra-filtros input[type="text"],
 .barra-filtros select {
   padding: 9px 14px;
-  border: 1.5px solid var(--linea);
+  border: 2px solid black;
   border-radius: 8px;
   font-size: 14px;
   font-family: inherit;
-  background-color: var(--crema);
-  color: var(--cafe-oscuro);
+  background-color: black;
+  color:white;
   transition: border-color 0.2s ease;
 }
 
 .barra-filtros input[type="text"]:focus,
 .barra-filtros select:focus {
   outline: none;
-  border-color: var(--terracota);
+  border-color: white;
 }
 
 .barra-filtros input[type="text"] {
@@ -148,7 +123,7 @@ body {
   align-items: center;
   gap: 7px;
   font-size: 14px;
-  color: var(--cafe-medio);
+  color: white;
   cursor: pointer;
 }
 
@@ -193,7 +168,7 @@ body {
 }
 
 .lista-locales::-webkit-scrollbar-thumb {
-  background-color: var(--linea);
+  background-color: black;
   border-radius: 8px;
 }
 
@@ -262,6 +237,8 @@ body {
 @media (max-width: 800px) {
   .contenedor-principal {
     flex-direction: column;
+    padding: 10px;
+    gap: 10px;
   }
 
   .encabezado h1 {
@@ -269,7 +246,7 @@ body {
   }
 
   #mapa {
-    height: 320px;
+    height: 200px; /* antes era 320px, lo achicamos bastante */
   }
 
   .lista-locales {

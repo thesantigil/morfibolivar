@@ -85,6 +85,24 @@ const locales = [
     }
   },
 
+    {
+    nombre: "A tu gusto",
+    categoria: "rotiseria",
+    direccion: "Olavarria 77",
+    telefono: "2314-618950",
+    lat: -36.229458537238806,
+    lng: -61.1166778903967,
+    horarios: {
+      lunes:     { apertura: "12:00",  cierre: "14:00", apertura2: "20:00",  cierre2: "23:59" },
+      martes:    { apertura: "12:00",  cierre: "14:00", apertura2: "20:00",  cierre2: "23:59" },
+      miercoles: { apertura: "12:00",  cierre: "14:00", apertura2: "20:00",  cierre2: "23:59" },
+      jueves:    { apertura2: "20:00",  cierre2: "23:59" },
+      viernes:   { apertura: "12:00",  cierre: "14:00", apertura2: "20:00",  cierre2: "23:59" },
+      sabado:    { apertura: "12:00",  cierre: "14:00", apertura2: "20:00",  cierre2: "23:59" },
+      domingo:   { apertura: "12:00",  cierre: "14:00", apertura2: "20:00",  cierre2: "23:59" }
+    }
+  },
+
   {
     nombre: "Pizza Roots",
     categoria: "rotiseria",

@@ -16,7 +16,7 @@ const locales = [
   {
     nombre: "Don Emilio",
     categoria: "parrilla",
-    direccion: "Av Brown y Ignacio Rivas",
+    direccion: "Av Brown e Ignacio Rivas",
     telefono: "2314-426283",
     lat: -36.2280156249528,
     lng: -61.11319735971254,

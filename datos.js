@@ -135,7 +135,7 @@ const locales = [
       jueves:    { apertura: "11:00", cierre: "14:00", apertura2: "19:00", cierre2: "24:00" },
       viernes:   { apertura: "11:00", cierre: "14:00", apertura2: "19:00", cierre2: "24:00" },
       sabado:    { apertura: "11:00", cierre: "14:00", apertura2: "19:00", cierre2: "24:00" },
-      domingo:   { apertura2: "19:00", cierre2: "24:00" }
+      domingo:   { apertura: "19:00", cierre: "24:00" }
     }
   },
 

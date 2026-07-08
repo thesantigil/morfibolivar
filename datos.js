@@ -17,7 +17,6 @@ const locales = [
     nombre: "Don Emilio",
     categoria: "parrilla",
     direccion: "Av Brown e Ignacio Rivas",
-    telefono: "2314-426283",
     lat: -36.2280156249528,
     lng: -61.11319735971254,
     horarios: {
@@ -35,7 +34,6 @@ const locales = [
     nombre: "La Cabaña",
     categoria: "parrilla",
     direccion: "RN 226",
-    telefono: "2314-502629",
     lat: -36.23366428892308,
     lng: -61.14072948682466,
     horarios: {
@@ -53,7 +51,6 @@ const locales = [
     nombre: "La tablita",
     categoria: "parrilla",
     direccion: "RN 226",
-    telefono: "2314-",
     lat: -36.24489797811856,
     lng: -61.11059982199166,
     horarios: {
@@ -71,7 +68,6 @@ const locales = [
     nombre: "Ruta 65",
     categoria: "parrilla",
     direccion: "Av Brown 120",
-    telefono: "2314-424747",
     lat: -36.22856439041418,
     lng: -61.112973590121975,
     horarios: {
@@ -89,7 +85,6 @@ const locales = [
     nombre: "A tu gusto",
     categoria: "rotiseria",
     direccion: "Olavarria 77",
-    telefono: "2314-618950",
     lat: -36.229458537238806,
     lng: -61.1166778903967,
     horarios: {
@@ -107,7 +102,6 @@ const locales = [
     nombre: "Pizza Roots",
     categoria: "rotiseria",
     direccion: "Belgrano y Sarmiento",
-    telefono: "2314-628680",
     lat: -36.228364861725744,
     lng: -61.11092627971464,
     horarios: {
@@ -125,7 +119,6 @@ const locales = [
     nombre: "Don Tata",
     categoria: "rotiseria",
     direccion: "Av San Martin 1455",
-    telefono: "2314-439751",
     lat: -36.22473296539379,
     lng: -61.120595825629344,
     horarios: {
@@ -143,7 +136,6 @@ const locales = [
     nombre: "La familia",
     categoria: "rotiseria",
     direccion: "Av Fabres Garcia 496",
-    telefono: "2314-426167",
     lat: -36.238466470229795,
     lng: -61.11887577544843,
     horarios: {
@@ -161,7 +153,6 @@ const locales = [
     nombre: "Las Malvinas",
     categoria: "rotiseria",
     direccion: "Av Gral Paz 254",
-    telefono: "2314-425171",
     lat: -36.23261661983944,
     lng: -61.11568783008354,
     horarios: {
@@ -179,7 +170,6 @@ const locales = [
     nombre: "Quimey",
     categoria: "rotiseria",
     direccion: "Boer 41",
-    telefono: "2314-500787",
     lat: -36.22684946748923,
     lng: -61.112399590396784,
     horarios: {
@@ -197,7 +187,6 @@ const locales = [
     nombre: "Insta Burger",
     categoria: "rotiseria",
     direccion: "Avellaneda 760",
-    telefono: "2314-484050",
     lat: -36.227778943016176,
     lng: -61.11172990204152,
     horarios: {
@@ -215,7 +204,6 @@ const locales = [
     nombre: "Rotiseria Sil",
     categoria: "rotiseria",
     direccion: "Almafuerte 138",
-    telefono: "2314-576537",
     lat: -36.224124508696754,
     lng: -61.110797502127234,
     horarios: {
@@ -233,7 +221,6 @@ const locales = [
     nombre: "Los Girasoles",
     categoria: "rotiseria",
     direccion: "Av Lavalle 399",
-    telefono: "2314-551119",
     lat: -36.232426541119494,
     lng: -61.117356420104855,
     horarios: {
@@ -251,7 +238,6 @@ const locales = [
     nombre: "Tentaciones",
     categoria: "rotiseria",
     direccion: "San Martin 144",
-    telefono: "2314-497315",
     lat: -36.23463097087255,
     lng: -61.00879847320558,
     horarios: {
@@ -269,7 +255,6 @@ const locales = [
     nombre: "Café Miró",
     categoria: "cafe",
     direccion: "Av. San Martin 660",
-    telefono: "--",
     lat: -36.23100409122974,
     lng: -61.11286120498524, 
     horarios: {
@@ -287,7 +272,6 @@ const locales = [
     nombre: "Heladería Sei tu",
     categoria: "heladeria",
     direccion: "Av. Venezuela 32",
-    telefono: "2314-440747",
     lat: -36.22878879165026,
     lng: -61.11440411694179,
     horarios: {
@@ -305,7 +289,6 @@ const locales = [
     nombre: "Belice",
     categoria: "heladeria",
     direccion: "Av. San Martin 447",
-    telefono: "2314-421000",
     lat: -36.22878879165026,
     lng: -61.11440411694179,
     horarios: {
@@ -323,7 +306,6 @@ const locales = [
     nombre: "Oasis",
     categoria: "heladeria",
     direccion: "Av. San Martín 234",
-    telefono: "2314-578510",
     lat: -36.234040977084106,
     lng: -61.109186494646465,
     horarios: {
@@ -341,7 +323,6 @@ const locales = [
     nombre: "Grido",
     categoria: "heladeria",
     direccion: "Av. Brown 225",
-    telefono: "2314-578510",
     lat: -36.22799815269258,
     lng: -61.11221305046923,
     horarios: {

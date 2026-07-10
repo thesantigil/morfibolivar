@@ -284,24 +284,6 @@ const locales = [
   },
 
   {
-    nombre: "Heladería Sei tu",
-    categoria: "heladeria",
-    direccion: "Av. Venezuela 32",
-    telefono: "2314-440747",
-    lat: -36.22878879165026,
-    lng: -61.11440411694179,
-    horarios: {
-      lunes:     { cerrado: true },
-      martes:    { apertura: "11:00", cierre: "24:00" },
-      miercoles: { apertura: "11:00", cierre: "24:00" },
-      jueves:    { apertura: "11:00", cierre: "24:00" },
-      viernes:   { apertura: "11:00", cierre: "24:00" },
-      sabado:    { apertura: "11:00", cierre: "24:00" },
-      domingo:   { apertura: "11:00", cierre: "24:00" }
-    }
-  },
-
-  {
     nombre: "Belice",
     categoria: "heladeria",
     direccion: "Av. San Martin 447",

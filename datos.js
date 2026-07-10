@@ -194,20 +194,20 @@ const locales = [
   },
 
     {
-    nombre: "Insta Burger",
+    nombre: "Maria Elena",
     categoria: "rotiseria",
-    direccion: "Avellaneda 760",
-    telefono: "2314-484050",
-    lat: -36.227778943016176,
-    lng: -61.11172990204152,
+    direccion: "Ignacio Rivas 480",
+    telefono: "2314-403235",
+    lat: -36.22463659210907,
+    lng: -61.11755907505492,
     horarios: {
-      lunes:     { cerrado: true },
-      martes:    { apertura: "20:30",  cierre: "00:00" },
-      miercoles: { apertura: "20:30",  cierre: "00:00" },
-      jueves:    { apertura: "20:30",  cierre: "00:00" },
-      viernes:   { apertura: "20:30",  cierre: "00:00" },
-      sabado:    { apertura: "20:30",  cierre: "00:00" },
-      domingo:   { apertura: "20:30",  cierre: "00:00" }
+      lunes:     { apertura: "11:00",  cierre: "14:00" },
+      martes:    { apertura: "11:00",  cierre: "14:00", apertura2: "19:30",  cierre2: "23:15" },
+      miercoles: { apertura: "11:00",  cierre: "14:00", apertura2: "19:30",  cierre2: "23:15" },
+      jueves:    { apertura: "11:00",  cierre: "14:00", apertura2: "19:30",  cierre2: "23:15" },
+      viernes:   { apertura: "11:00",  cierre: "14:00", apertura2: "19:30",  cierre2: "23:15" },
+      sabado:    { apertura: "11:00",  cierre: "14:00", apertura2: "19:30",  cierre2: "23:15" },
+      domingo:   { apertura: "20:00",  cierre: "23:30" }
     }
   },
 

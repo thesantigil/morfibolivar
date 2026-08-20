@@ -32,6 +32,44 @@ body {
   background-size: 22px 22px;
 }
 
+.btn-instagram{
+  display:inline-block;
+  margin-top:.5rem;
+  padding:.4rem .8rem;
+  border-radius:20px;
+  background:#C9375A;
+  color:#fff;
+  font-size:.8rem;
+  font-weight:600;
+  text-decoration:none;
+}
+
+.menu-fotos{
+  display:flex;
+  gap:.4rem;
+  margin-top:.6rem;
+  overflow-x:auto;
+}
+.menu-fotos img{
+  width:80px;
+  height:80px;
+  object-fit:cover;
+  border-radius:6px;
+  cursor:pointer;
+  flex-shrink:0;
+}
+
+.btn-whatsapp{
+  display:inline-block;
+  padding:.4rem .8rem;
+  border-radius:20px;
+  background:#25D366;
+  color:#fff;
+  font-size:.8rem;
+  font-weight:600;
+  text-decoration:none;
+}
+
 /* ===== ENCABEZADO ===== */
 .encabezado {
   position: relative;

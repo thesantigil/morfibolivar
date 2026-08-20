@@ -86,6 +86,31 @@ const locales = [
   },
 
     {
+    nombre: "Maria Elena",
+    categoria: "rotiseria",
+    direccion: "Ignacio Rivas 480",
+    instagram: "https://www.instagram.com/rotiseria.mariaelena",
+    whatsapp: "5492314403235",
+    menu: [
+      "assets/mariaelena1.jpeg",
+      "assets/mariaelena2.jpg",
+      "assets/mariaelena3.jpg",
+      "assets/mariaelena4.jpg"
+    ],
+    lat: -36.22463659210907,
+    lng: -61.11755907505492,
+    horarios: {
+      lunes:     { apertura: "11:00",  cierre: "14:00" },
+      martes:    { apertura: "11:00",  cierre: "14:00", apertura2: "19:30",  cierre2: "23:15" },
+      miercoles: { apertura: "11:00",  cierre: "14:00", apertura2: "19:30",  cierre2: "23:15" },
+      jueves:    { apertura: "11:00",  cierre: "14:00", apertura2: "19:30",  cierre2: "23:15" },
+      viernes:   { apertura: "11:00",  cierre: "14:00", apertura2: "19:30",  cierre2: "23:15" },
+      sabado:    { apertura: "11:00",  cierre: "14:00", apertura2: "19:30",  cierre2: "23:15" },
+      domingo:   { apertura: "20:00",  cierre: "23:30" }
+    }
+  },
+
+    {
     nombre: "A tu gusto",
     categoria: "rotiseria",
     direccion: "Olavarria 77",
@@ -189,24 +214,6 @@ const locales = [
       jueves:    { apertura: "20:00",  cierre: "23:30" },
       viernes:   { apertura: "20:00",  cierre: "23:30" },
       sabado:    { apertura: "20:00",  cierre: "23:30" },
-      domingo:   { apertura: "20:00",  cierre: "23:30" }
-    }
-  },
-
-    {
-    nombre: "Maria Elena",
-    categoria: "rotiseria",
-    direccion: "Ignacio Rivas 480",
-    telefono: "2314-403235",
-    lat: -36.22463659210907,
-    lng: -61.11755907505492,
-    horarios: {
-      lunes:     { apertura: "11:00",  cierre: "14:00" },
-      martes:    { apertura: "11:00",  cierre: "14:00", apertura2: "19:30",  cierre2: "23:15" },
-      miercoles: { apertura: "11:00",  cierre: "14:00", apertura2: "19:30",  cierre2: "23:15" },
-      jueves:    { apertura: "11:00",  cierre: "14:00", apertura2: "19:30",  cierre2: "23:15" },
-      viernes:   { apertura: "11:00",  cierre: "14:00", apertura2: "19:30",  cierre2: "23:15" },
-      sabado:    { apertura: "11:00",  cierre: "14:00", apertura2: "19:30",  cierre2: "23:15" },
       domingo:   { apertura: "20:00",  cierre: "23:30" }
     }
   },

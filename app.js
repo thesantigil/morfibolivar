@@ -85,7 +85,6 @@ function textoHorarioHoy(local) {
   return texto;
 }
 
-
 // ===== 5. DIBUJAR LOS MARCADORES EN EL MAPA =====
 const marcadores = {};
 
@@ -116,7 +115,6 @@ function crearMarcadores() {
   });
 }
 
-
 // ===== 6. CREAR LAS TARJETAS DE LA LISTA =====
 function crearTarjeta(local) {
   const abierto = estaAbierto(local);
@@ -127,6 +125,26 @@ function crearTarjeta(local) {
   tarjeta.dataset.nombre = local.nombre.toLowerCase();
   tarjeta.dataset.abierto = abierto;
 
+  // Botón de Instagram: solo se arma si el local tiene el campo "instagram"
+  const botonInstagram = local.instagram
+    ? `<a class="btn-instagram" href="${local.instagram}" target="_blank" rel="noopener" onclick="event.stopPropagation();">Instagram</a>`
+    : '';
+
+  // Botón de WhatsApp: solo se arma si el local tiene el campo "whatsapp"
+  const botonWhatsapp = local.whatsapp
+    ? `<a class="btn-whatsapp" href="https://wa.me/${local.whatsapp}" target="_blank" rel="noopener" onclick="event.stopPropagation();">WhatsApp</a>`
+    : '';
+
+  // Fotos del menú: solo se arman si el local tiene el campo "menu" (array de rutas)
+  const fotosMenu = (local.menu && local.menu.length > 0)
+    ? `<div class="menu-fotos">
+        ${local.menu.map(ruta => `
+          <img src="${ruta}" alt="Menú de ${local.nombre}"
+               onclick="event.stopPropagation(); window.open('${ruta}', '_blank');">
+        `).join('')}
+      </div>`
+    : '';
+
   tarjeta.innerHTML = `
     <h3>${local.nombre}</h3>
     <p>📍 ${local.direccion}</p>
@@ -135,6 +153,11 @@ function crearTarjeta(local) {
     <span class="estado ${abierto ? 'abierto' : 'cerrado'}">
       ${abierto ? 'ABIERTO' : 'CERRADO'}
     </span>
+    <div class="botones-contacto">
+      ${botonWhatsapp}
+      ${botonInstagram}
+    </div>
+    ${fotosMenu}
   `;
 
   tarjeta.addEventListener('click', () => {

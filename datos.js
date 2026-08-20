@@ -89,6 +89,7 @@ const locales = [
     nombre: "Maria Elena",
     categoria: "rotiseria",
     direccion: "Ignacio Rivas 480",
+    logo: "assets/mariaelenalogo.jpg",
     instagram: "https://www.instagram.com/rotiseria.mariaelena",
     whatsapp: "5492314403235",
     menu: [

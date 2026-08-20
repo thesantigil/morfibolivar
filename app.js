@@ -56,7 +56,6 @@ function estaAbierto(local) {
   return dentroDelPrimerRango || dentroDelSegundoRango;
 }
 
-
 // ===== 4. FUNCIÓN PARA DAR FORMATO AL HORARIO DE HOY (texto legible) =====
 function textoHorarioHoy(local) {
   const ahora = new Date();
@@ -125,6 +124,11 @@ function crearTarjeta(local) {
   tarjeta.dataset.nombre = local.nombre.toLowerCase();
   tarjeta.dataset.abierto = abierto;
 
+  // Logo del comercio: solo se arma si el local tiene el campo "logo"
+  const logoLocal = local.logo
+    ? `<img class="logo-local" src="${local.logo}" alt="Logo de ${local.nombre}">`
+    : '';
+
   // Botón de Instagram: solo se arma si el local tiene el campo "instagram"
   const botonInstagram = local.instagram
     ? `<a class="btn-instagram" href="${local.instagram}" target="_blank" rel="noopener" onclick="event.stopPropagation();">Instagram</a>`
@@ -146,7 +150,10 @@ function crearTarjeta(local) {
     : '';
 
   tarjeta.innerHTML = `
-    <h3>${local.nombre}</h3>
+    <div class="tarjeta-header">
+      ${logoLocal}
+      <h3>${local.nombre}</h3>
+    </div>
     <p>📍 ${local.direccion}</p>
     <p>📞 ${local.telefono}</p>
     <p>${textoHorarioHoy(local)}</p>
@@ -177,7 +184,6 @@ function mostrarTodasLasTarjetas() {
     contenedorLista.appendChild(tarjeta);
   });
 }
-
 
 // ===== 7. FILTROS =====
 function aplicarFiltros() {

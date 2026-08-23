@@ -4,17 +4,34 @@
    ========================================================= */
 
 :root {
-  --crema:           #F2E8D8; /* fondo general, cálido como un mantel */
-  --crema-tarjeta:    #FBF6EC; /* fondo de las tarjetas, un poco más claro */
-  --cafe-oscuro:      #2E2018; /* texto principal, casi negro con base marrón */
-  --cafe-medio:       #6B5645; /* texto secundario */
-  --terracota:        #B5482F; /* acento principal: brasas, ladrillo quemado */
-  --terracota-oscuro: #8C3520; /* hover / detalles */
-  --oliva:            #5C6B3F; /* "abierto" — verde apagado, no semáforo */
-  --oliva-oscuro:     #3F4A2B;
-  --rojo-cerrado:     #8C3A30; /* "cerrado" — rojo tierra, no rojo alarma */
-  --linea:            #DCC9A8; /* bordes y separadores sutiles */
-  --sombra:           rgba(46, 32, 24, 0.12);
+  /* ===== FONDO GENERAL ===== */
+  --crema: #F7F5F2;
+
+  /* ===== FONDO DE TARJETAS ===== */
+  --crema-tarjeta: #FFFFFF;
+
+  /* ===== TEXTOS ===== */
+  --cafe-oscuro: #292426;
+  --cafe-medio: #756C6F;
+
+  /* ===== COLOR PRINCIPAL ===== */
+  --terracota: #A44768;
+
+  /* ===== COLOR PRINCIPAL OSCURO / HOVER ===== */
+  --terracota-oscuro: #823650;
+
+  /* ===== LOCALES ABIERTOS ===== */
+  --oliva: #5F806B;
+  --oliva-oscuro: #456252;
+
+  /* ===== LOCALES CERRADOS ===== */
+  --rojo-cerrado: #9B4B4B;
+
+  /* ===== BORDES ===== */
+  --linea: #E6E1DE;
+
+  /* ===== SOMBRAS ===== */
+  --sombra: rgba(41, 36, 38, 0.10);
 }
 
 * {
@@ -132,34 +149,192 @@ body {
 .barra-filtros {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
   align-items: center;
   justify-content: center;
-  background-color: rgb(67, 4, 32);
-  padding: 16px 20px;
-  border-bottom: 1px solid var(--linea);
-}
-
-.barra-filtros input[type="text"],
-.barra-filtros select {
-  padding: 9px 14px;
-  border: 2px solid rgb(177, 177, 177);
-  border-radius: 8px;
-  font-size: 12px;
-  font-family: inherit;
-  background-color: black;
-  color:white;
-  transition: border-color 0.2s ease;
-}
-
-.barra-filtros input[type="text"]:focus,
-.barra-filtros select:focus {
-  outline: none;
-  border-color: rgb(0, 147, 103);
+  gap: 10px;
+  padding: 14px 20px;
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 10;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .barra-filtros input[type="text"] {
+  width: 300px;
   min-width: 220px;
+
+  padding: 12px 16px;
+
+  border: 1px solid #000000;
+  border-radius: 14px;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  background: #fff;
+  color: var(--cafe-oscuro);
+
+  outline: none;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.barra-filtros input[type="text"]::placeholder {
+  color: #999;
+}
+
+.barra-filtros input[type="text"]:focus {
+  border-color: #8f4265;
+
+  box-shadow:
+    0 0 0 3px rgba(143, 66, 101, 0.12),
+    0 4px 12px rgba(0, 0, 0, 0.06);
+
+  transform: translateY(-1px);
+}
+
+
+/* ===== SELECTORES ===== */
+
+.barra-filtros select {
+  appearance: none;
+  -webkit-appearance: none;
+
+  padding: 11px 38px 11px 14px;
+
+  border: 1px solid #000000;
+  border-radius: 12px;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+
+  background-color: #fff;
+  color: #4a3a40;
+
+  cursor: pointer;
+
+  outline: none;
+
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.04);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.barra-filtros select:hover {
+  background-color: #ffffff;
+  border-color: #c9a8b8;
+}
+
+.barra-filtros select:focus {
+  border-color: #8f4265;
+
+  box-shadow:
+    0 0 0 3px rgba(143, 66, 101, 0.10);
+}
+
+
+/* ===== FILTRO CHECKBOX ===== */
+
+.filtro-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 10px 14px;
+
+  border: 1px solid #000000;
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  color: #08d63c;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.filtro-checkbox:hover {
+  background-color: #faf7f8;
+  border-color: #c9a8b8;
+}
+
+
+/* Checkbox */
+
+.filtro-checkbox input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+
+  width: 18px;
+  height: 18px;
+
+  margin: 0;
+
+  border: 2px solid #bbb;
+  border-radius: 6px;
+
+  background: rgb(64, 184, 118);
+
+  cursor: pointer;
+
+  position: relative;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+/* Checkbox activo */
+
+.filtro-checkbox input[type="checkbox"]:checked {
+  background-color: #8f4265;
+  border-color: #8f4265;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 800px) {
+
+  .barra-filtros {
+    padding: 12px;
+    gap: 8px;
+
+    justify-content: stretch;
+  }
+
+  .barra-filtros input[type="text"] {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .barra-filtros select {
+    flex: 1;
+    min-width: 140px;
+  }
+
+  .filtro-checkbox {
+    flex: 1;
+    justify-content: center;
+  }
+
 }
 
 .filtro-checkbox {
@@ -167,7 +342,7 @@ body {
   align-items: center;
   gap: 7px;
   font-size: 14px;
-  color: white;
+  color: rgb(109, 32, 32);
   cursor: pointer;
 }
 
@@ -190,17 +365,11 @@ body {
 
 /* El mapa ocupa un tamaño fijo y se ve siempre */
 #mapa {
-  border-radius: 5px;
-  border: 3px solid rgb(0, 0, 0);
-  animation: borde-arcoiris 4s linear infinite;
-}
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
 
-@keyframes borde-arcoiris {
-  0%   { border-color: #B5482F; }
-  25%  { border-color: #6B5645; }
-  50%  { border-color: #5C6B3F; }
-  75%  { border-color: #8C3520; }
-  100% { border-color: #B5482F; }
+  overflow: hidden;
 }
 
 /* La lista de locales, al lado del mapa */

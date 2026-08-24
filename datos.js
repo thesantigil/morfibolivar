@@ -209,7 +209,7 @@ const locales = [
     lat: -36.22684946748923,
     lng: -61.112399590396784,
     horarios: {
-      lunes:     { cerrado: true },
+      lunes:     { apertura: "20:00",  cierre: "23:30" },
       martes:    { apertura: "20:00",  cierre: "23:30" },
       miercoles: { apertura: "20:00",  cierre: "23:30" },
       jueves:    { apertura: "20:00",  cierre: "23:30" },

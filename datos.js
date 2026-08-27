@@ -273,6 +273,26 @@ const locales = [
     }
   },
 
+    {
+    nombre: "Petra, pasteleria & café",
+    categoria: "cafe",
+    direccion: "Rondeau y Mitre",
+    logo: "assets/petra.png",
+    instagram: "https://www.instagram.com/petrapasteleriaycafe",
+    whatsapp: "5492314417807",
+    lat: -36.233803175421954,
+    lng: -61.111953924565874,
+    horarios: {
+      lunes:     { cerrado: true },
+      martes:    { cerrado: true },
+      miercoles: { cerrado: true },
+      jueves:    { apertura: "09:00",  cierre: "13:00", apertura2: "16:00",  cierre2: "19:30" },
+      viernes:   { apertura: "09:00",  cierre: "13:00", apertura2: "16:00",  cierre2: "19:30" },
+      sabado:    { apertura: "09:00",  cierre: "13:00", apertura2: "16:00",  cierre2: "19:30" },
+      domingo:   { apertura: "09:00",  cierre: "13:00", apertura2: "16:00",  cierre2: "19:30" }
+    }
+  },
+
   {
     nombre: "Café Miró",
     categoria: "cafe",
@@ -288,24 +308,6 @@ const locales = [
       viernes:   { apertura: "08:00", cierre: "20:00" },
       sabado:    { apertura: "08:00", cierre: "20:00" },
       domingo:   { apertura: "08:00", cierre: "20:00" }
-    }
-  },
-
-    {
-    nombre: "Petra, pasteleria & café",
-    categoria: "cafe",
-    direccion: "Rondeau y Mitre",
-    telefono: "--",
-    lat: -36.233803175421954,
-    lng: -61.111953924565874,
-    horarios: {
-      lunes:     { cerrado: true },
-      martes:    { cerrado: true },
-      miercoles: { cerrado: true },
-      jueves:    { apertura: "09:00",  cierre: "13:00", apertura2: "16:00",  cierre2: "19:30" },
-      viernes:   { apertura: "09:00",  cierre: "13:00", apertura2: "16:00",  cierre2: "19:30" },
-      sabado:    { apertura: "09:00",  cierre: "13:00", apertura2: "16:00",  cierre2: "19:30" },
-      domingo:   { apertura: "09:00",  cierre: "13:00", apertura2: "16:00",  cierre2: "19:30" }
     }
   },
 
